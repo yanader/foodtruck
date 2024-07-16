@@ -1,6 +1,7 @@
 package com.yanader.foodtruck.controller;
 
 import com.yanader.foodtruck.model.FoodTruck;
+import com.yanader.foodtruck.model.dto.TruckDTO;
 import com.yanader.foodtruck.service.TruckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,8 +19,8 @@ public class TruckController {
     TruckService truckService;
 
     @GetMapping
-    public ResponseEntity<Iterable<FoodTruck>> getAllFoodTrucks() {
-        Iterable<FoodTruck> allTrucks = truckService.getAllTrucks();
+    public ResponseEntity<Iterable<TruckDTO>> getAllFoodTrucks() {
+        Iterable<TruckDTO> allTrucks = truckService.getAllTrucks();
         return new ResponseEntity<>(allTrucks, HttpStatus.OK);
     }
 }
