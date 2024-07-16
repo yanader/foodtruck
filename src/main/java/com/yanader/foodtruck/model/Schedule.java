@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 @Entity
 public class Schedule {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long scheduleId;
     private long truckId; // FOREIGN KEY
     private LocalDate startTime;
