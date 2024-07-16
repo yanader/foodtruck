@@ -1,6 +1,6 @@
 package com.yanader.foodtruck.model;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
 
@@ -8,12 +8,22 @@ import jakarta.persistence.*;
 @Entity
 public class Schedule {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long scheduleId;
-    private long truckId; // FOREIGN KEY
-    private LocalDate startTime;
-    private LocalDate endTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "truck_id", nullable = false)
+    private FoodTruck foodTruck;
+
+    @Column(nullable = false)
+    private LocalDateTime startTime;
+    @Column(nullable = false)
+    private LocalDateTime endTime;
+
+    @Column(nullable = false)
     private String locationName;
+    @Column(nullable = false)
     private double latitude;
+    @Column(nullable = false)
     private double longitude;
 }
