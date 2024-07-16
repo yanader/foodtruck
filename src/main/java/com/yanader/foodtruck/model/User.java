@@ -38,5 +38,41 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private Set<Review> reviews;
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public boolean isTruckOwner() {
+        return isTruckOwner;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public LocalDateTime getCreatedOn() {
+        return createdOn;
+    }
+
+    public Set<FoodTruck> getFoodTrucks() {
+        return foodTrucks;
+    }
+
+    public Set<Favourite> getFavourites() {
+        return favourites;
+    }
+
+    public Set<Review> getReviews() {
+        return reviews;
+    }
 }
 

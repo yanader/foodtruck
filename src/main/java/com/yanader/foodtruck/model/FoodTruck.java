@@ -1,5 +1,6 @@
 package com.yanader.foodtruck.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -14,6 +15,7 @@ public class FoodTruck {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User user;
 
     @Column(nullable = false)
@@ -23,4 +25,24 @@ public class FoodTruck {
 
     @OneToMany(mappedBy = "foodTruck")
     private Set<Schedule> schedules;
+
+    public long getTruckId() {
+        return truckId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public String getTruckName() {
+        return truckName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Set<Schedule> getSchedules() {
+        return schedules;
+    }
 }

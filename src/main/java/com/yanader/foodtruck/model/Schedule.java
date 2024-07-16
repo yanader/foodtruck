@@ -26,4 +26,32 @@ public class Schedule {
     private double latitude;
     @Column(nullable = false)
     private double longitude;
+
+    public long getScheduleId() {
+        return scheduleId;
+    }
+
+    public FoodTruck getFoodTruck() {
+        return foodTruck;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
 }

@@ -6,14 +6,16 @@ VALUES
     (true, NOW(), 3, 'owner2@example.com', 'TruckOwner2', 'TRUCK'),
     (false, NOW(), 4, 'customer2@example.com', 'Customer2', 'CUSTOMER'),
     (true, NOW(), 5, 'owner3@example.com', 'TruckOwner3', 'TRUCK'),
-    (false, NOW(), 6, 'customer3@example.com', 'Customer3', 'CUSTOMER');
+    (false, NOW(), 6, 'customer3@example.com', 'Customer3', 'CUSTOMER')
+    ON CONFLICT (user_id) DO NOTHING;
 
 -- Insert data into trucks table
 INSERT INTO trucks (truck_id, user_id, description, truck_name)
 VALUES
     (1, 1, 'Best food truck in town', 'Truck A'),
     (2, 3, 'Delicious street food', 'Truck B'),
-    (3, 5, 'Gourmet burgers and fries', 'Truck C');
+    (3, 5, 'Gourmet burgers and fries', 'Truck C')
+    ON CONFLICT (truck_id) DO NOTHING;
 
 -- Insert data into schedule table
 INSERT INTO schedule (latitude, longitude, end_time, start_time, truck_id, location_name)

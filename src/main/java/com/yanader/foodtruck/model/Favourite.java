@@ -21,4 +21,20 @@ public class Favourite {
 
     @Column(nullable = false, updatable = false)
     private final LocalDateTime addedAt = LocalDateTime.now();
+
+    public long getFavouriteId() {
+        return favouriteId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public FoodTruck getFoodTruck() {
+        return foodTruck;
+    }
+
+    public LocalDateTime getAddedAt() {
+        return addedAt;
+    }
 }

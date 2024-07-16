@@ -29,4 +29,30 @@ public class Review {
     private String text;
     @Column(nullable = false, updatable = false)
     private final LocalDateTime createdOn = LocalDateTime.now();
+
+    public long getReviewId() {
+        return reviewId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public FoodTruck getFoodTruck() {
+        return foodTruck;
+    }
+
+    @Min(1)
+    @Max(5)
+    public int getRating() {
+        return rating;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public LocalDateTime getCreatedOn() {
+        return createdOn;
+    }
 }

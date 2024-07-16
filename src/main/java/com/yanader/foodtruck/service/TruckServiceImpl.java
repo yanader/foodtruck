@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TruckServiceImpl {
+public class TruckServiceImpl implements TruckService {
 
     @Autowired
     TruckRepository truckRepository;
 
-    public Iterable<FoodTruck> getAllFoodTrucks() {
+    @Override
+    public Iterable<FoodTruck> getAllTrucks() {
         return truckRepository.findAll();
     }
 }
