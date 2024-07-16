@@ -9,11 +9,11 @@ VALUES
     (false, NOW(), 6, 'customer3@example.com', 'Customer3', 'CUSTOMER');
 
 -- Insert data into trucks table
-INSERT INTO trucks (user_id, description, truck_name)
+INSERT INTO trucks (truck_id, user_id, description, truck_name)
 VALUES
-    (1, 'Best food truck in town', 'Truck A'),
-    (3, 'Delicious street food', 'Truck B'),
-    (5, 'Gourmet burgers and fries', 'Truck C');
+    (1, 1, 'Best food truck in town', 'Truck A'),
+    (2, 3, 'Delicious street food', 'Truck B'),
+    (3, 5, 'Gourmet burgers and fries', 'Truck C');
 
 -- Insert data into schedule table
 INSERT INTO schedule (latitude, longitude, end_time, start_time, truck_id, location_name)
